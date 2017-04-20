@@ -8,7 +8,9 @@ RUN apt-get update && \
         git \
         ssh \
         libssl-dev \
-        pkg-config 
+        pkg-config && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 ENV RUSTUP_HOME=/rust
 ENV CARGO_HOME=/cargo 
