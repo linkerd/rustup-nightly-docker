@@ -7,7 +7,7 @@ This image should be extended.  For example:
 ```Dockerfile
 FROM linkerd/rustup-nightly:latest
 
-RUN rustup update nightly && cargo install rustfmt && cargo install clippy
+RUN /install-rust.sh && cargo install rustfmt && cargo install clippy
 
 COPY . /app
 WORKDIR /app

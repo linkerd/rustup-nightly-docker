@@ -16,4 +16,4 @@ ENV RUSTUP_HOME=/rust
 ENV CARGO_HOME=/cargo 
 ENV PATH=/cargo/bin:/rust/bin:$PATH
 
-RUN (curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain nightly --no-modify-path) && rustup default nightly
+RUN echo "(curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain nightly --no-modify-path) && rustup default nightly" > /install-rust.sh && chmod 755 /install-rust.sh
